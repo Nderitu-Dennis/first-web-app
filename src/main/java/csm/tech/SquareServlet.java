@@ -11,14 +11,22 @@ public class SquareServlet extends HttpServlet {
 	// create a get method -will send a request
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
-		// fetching the attributes from AddServlet
-		int result = (int) req.getAttribute("result");
-		int i = (int) req.getAttribute("i");
-		int j = (int) req.getAttribute("j");
+		/*
+		 * // fetching the attributes from AddServlet int result = (int)
+		 * req.getAttribute("result");
+		 *  int i = (int) req.getAttribute("i");
+		 * int j = (int) req.getAttribute("j");
+		 * 
+		 * result = result * result; 
+		 * PrintWriter out = res.getWriter();
+		 * out.println("square of " + i + " and " + j + " is: " + result);
+		 */
 
+//		USING RE DIRECTS
+		int result = Integer.parseInt(req.getParameter("result"));
 		result = result * result;
 		PrintWriter out = res.getWriter();
-		out.println("square of " + i + " and " + j + " is: " + result);
+		out.println("result is " + result);
 
 	}
 }

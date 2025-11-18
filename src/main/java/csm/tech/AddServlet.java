@@ -21,19 +21,22 @@ public class AddServlet extends HttpServlet {
 		int j = Integer.parseInt(req.getParameter("num2"));
 
 		int result = i + j;
-		//System.out.println(result);
 
-		// get the response frm server to client
-		 // sharing data btwn servlets-put some data in the request object
-		req.setAttribute("result", result);	
-		req.setAttribute("i", i);
-		req.setAttribute("j", j);
-		
-
-		// redirect this output to another servlet
-		RequestDispatcher rd = req.getRequestDispatcher("square"); //square is the path/url
-		rd.forward(req, res);
-
+		/*
+		 * **USING REQUEST DISPATCHER // get the response frm server to client //
+		 * sharing data btwn servlets-put some data in the request object
+		 * req.setAttribute("result", result); req.setAttribute("i", i);
+		 * req.setAttribute("j", j);
+		 * 
+		 * 
+		 * // redirect this output to another servlet RequestDispatcher rd =
+		 * req.getRequestDispatcher("square"); //square is the path/url rd.forward(req,
+		 * res);
+		 */
+//		**USING SEND REDIRECT
+		// servlet sends a response to client to re direct it to another url hence we
+		// use res
+		res.sendRedirect("square?result=" + result); // url rewriting
 	}
 
 }
