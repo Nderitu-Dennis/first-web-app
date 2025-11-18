@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet {
 
@@ -23,9 +24,10 @@ public class AddServlet extends HttpServlet {
 		int result = i + j;
 
 		/*
-		 * **USING REQUEST DISPATCHER // get the response frm server to client //
+		 *1. **USING REQUEST DISPATCHER // get the response frm server to client //
 		 * sharing data btwn servlets-put some data in the request object
-		 * req.setAttribute("result", result); req.setAttribute("i", i);
+		 * req.setAttribute("result", result);
+		 *  req.setAttribute("i", i);
 		 * req.setAttribute("j", j);
 		 * 
 		 * 
@@ -33,10 +35,17 @@ public class AddServlet extends HttpServlet {
 		 * req.getRequestDispatcher("square"); //square is the path/url rd.forward(req,
 		 * res);
 		 */
-//		**USING SEND REDIRECT
-		// servlet sends a response to client to re direct it to another url hence we
-		// use res
-		res.sendRedirect("square?result=" + result); // url rewriting
+		
+		 /* 2. **USING SEND REDIRECT 
+		 * servlet sends a response to client to re direct it to another url hence we use res
+		 *  res.sendRedirect("square?result="+result); //- url rewriting
+		 */
+		// 3. USING SESSIONS
+		HttpSession session = req.getSession();
+		session.setAttribute("result",result);
+		res.sendRedirect("square");
+		
+		
 	}
 
 }

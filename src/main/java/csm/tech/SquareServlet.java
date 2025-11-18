@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class SquareServlet extends HttpServlet {
 	// create a get method -will send a request
@@ -23,10 +24,19 @@ public class SquareServlet extends HttpServlet {
 		 */
 
 //		USING RE DIRECTS
-		int result = Integer.parseInt(req.getParameter("result"));
+		/* int result = Integer.parseInt(req.getParameter("result"));
 		result = result * result;
 		PrintWriter out = res.getWriter();
-		out.println("result is " + result);
+		out.println("result is " + result); */
+		
+//		USING SESSIONS
+		// fetch the value from AddServlet, declare session first
+		HttpSession session = req.getSession();
+		int result = (int) session.getAttribute("result");
+		result = result * result;
+		
+		PrintWriter out = res.getWriter();
+		out.println("--from sesssion-- result is: " + result);
 
 	}
 }
