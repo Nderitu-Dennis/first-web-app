@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 public class AddServlet extends HttpServlet {
 
 	// service method
-	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+//	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+
 //		get values from the user
 //		parse the string values from user to int
 		int i = Integer.parseInt(req.getParameter("num1"));
