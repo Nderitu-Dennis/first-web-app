@@ -37,7 +37,7 @@ public class SquareServlet extends HttpServlet {
 		result = result * result;
 		
 		PrintWriter out = res.getWriter();
-		out.println("--from sesssion-- result is: " + result); */
+		out.println("--from session-- result is: " + result); */
 		
 //		USING COOKIES
 		//extract cookie-comes as a request to this square server so we use req 
