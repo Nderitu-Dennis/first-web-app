@@ -12,4 +12,5 @@
 
 **ServletConfig**-works in individual servlets-diff configs for different servlets hence the name ServletConfig
 -declared in an individual servlet tag in the dd
+
 **ServletContext**-shared by all servlets, one context visible/used by all servlets
