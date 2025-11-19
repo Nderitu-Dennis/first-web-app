@@ -12,9 +12,9 @@ public class SquareServlet extends HttpServlet {
 	// create a get method -will send a request
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
-		/*
-		 * // fetching the attributes from AddServlet int result = (int)
-		 * req.getAttribute("result");
+		/* USING REQUEST DISPATCHER
+		 * // fetching the attributes from AddServlet
+		 *  int result = (int)  req.getAttribute("result");
 		 *  int i = (int) req.getAttribute("i");
 		 * int j = (int) req.getAttribute("j");
 		 * 
