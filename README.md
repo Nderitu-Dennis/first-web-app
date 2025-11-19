@@ -14,3 +14,8 @@
 -declared in an individual servlet tag in the dd
 
 **ServletContext**-shared by all servlets, one context visible/used by all servlets
+
+---
+
+# JSP -Java Server Pages
+- write `Java` code inside `HTML`
