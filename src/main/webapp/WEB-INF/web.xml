@@ -6,56 +6,6 @@
 	<display-name>FirstWebApp</display-name>
 	<!-- configure the servlet, when i call /add, call AddServlet class -->
 
-	<servlet>
-		<servlet-name>servlet-add</servlet-name>
-		<servlet-class>csm.tech.AddServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>servlet-add</servlet-name>
-		<url-pattern>/add</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>servlet-square</servlet-name>
-		<servlet-class>csm.tech.SquareServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>servlet-square</servlet-name>
-		<url-pattern>/square</url-pattern>
-		<!-- here, when u send a request for square, it will call SquareServlet -->
-	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>ServletContextAndServletConfig_Servlet</servlet-name>
-		<servlet-class>csm.tech.ServletContextAndServletConfig_Servlet</servlet-class>
-		
-		<!-- using ServletConfig, used inside a servlet cz its specific to a single servlet -->
-		<init-param>
-			<param-name>name</param-name>
-			<param-value>Magnificent thug-coming from Servlet Config</param-value>
-		</init-param>
-		
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>ServletContextAndServletConfig_Servlet</servlet-name>
-		<url-pattern>/hey-maz</url-pattern>
-	</servlet-mapping>
-	
-	
-	
-	<!-- servlet config & servlet context -->
-	<!-- servlet context -->
-	<context-param>
-		<param-name>name</param-name>
-		<param-value>Mazindere Oluoch-coming from ServletContext-</param-value>
-	</context-param>
-	
-	<context-param>
-		<param-name>status</param-name>
-		<param-value>yo dont lose yo streetness</param-value>
-	</context-param>
 
 </web-app>

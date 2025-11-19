@@ -1,16 +1,19 @@
 package csm.tech;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@WebServlet("/add")
 public class AddServlet extends HttpServlet {
 
 	// service method
@@ -32,9 +35,9 @@ public class AddServlet extends HttpServlet {
 		 * req.setAttribute("j", j);
 		 * 
 		 * 
-		 * // redirect this output to another servlet RequestDispatcher rd =
-		 * req.getRequestDispatcher("square"); //square is the path/url rd.forward(req,
-		 * res);
+		 * // redirect this output to another servlet 
+		 * RequestDispatcher rd = req.getRequestDispatcher("square"); //square is the path/url
+		 *  rd.forward(req,res);
 		 */
 		
 		 /* 2. **USING SEND REDIRECT 
