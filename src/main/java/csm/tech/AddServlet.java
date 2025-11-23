@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 @WebServlet("/add")
 public class AddServlet extends HttpServlet {
 
@@ -26,6 +27,8 @@ public class AddServlet extends HttpServlet {
 		int j = Integer.parseInt(req.getParameter("num2"));
 
 		int result = i + j;
+		
+		System.out.println("Result " + result);
 
 		/*
 		 *1. **USING REQUEST DISPATCHER // get the response frm server to client //
@@ -45,21 +48,20 @@ public class AddServlet extends HttpServlet {
 		 *  res.sendRedirect("square?result="+result); //- url rewriting
 		 */
 		// 3. USING SESSIONS
+		
+		  HttpSession session = req.getSession();
+		  System.out.println("session id: "+session.getId());
+		 
+		 session.setAttribute("result",result);
+		  res.sendRedirect("square"); // here cz of res, AddServlet/server redirects response to another servlet, Square
+			
+		
 		/*
-		 * HttpSession session = req.getSession();
-		 * System.out.println("session id: "+session.getId());
-		 * 
-		 * session.setAttribute("result",result);
-		 *  res.sendRedirect("square"); // here cz of res, AddServlet/server redirects response to another servlet, Square
-		 */	
-		
-//		USING COOKIES
-		// create a new cookie
-		Cookie cookie = new Cookie("result", result+"");  //int appended "" becomes a String
-		// add cookie to the response obj that goes to the client
-		res.addCookie(cookie);
-		res.sendRedirect("square");  //client now sends cookie(res) to another server
-		
+		 * // USING COOKIES // create a new cookie Cookie cookie = new Cookie("result",
+		 * result+""); //int appended "" becomes a String // add cookie to the response
+		 * obj that goes to the client res.addCookie(cookie);
+		 * res.sendRedirect("square"); //client now sends cookie(res) to another server
+		 */		
 		
 	
 		

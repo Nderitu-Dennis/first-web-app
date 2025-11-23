@@ -34,26 +34,24 @@ public class SquareServlet extends HttpServlet {
 		
 //		USING SESSIONS
 		// fetch the value from AddServlet, declare session first
-		/*HttpSession session = req.getSession();
+		HttpSession session = req.getSession();
 		int result = (int) session.getAttribute("result");
 		result = result * result;
 		
 		PrintWriter out = res.getWriter();
-		out.println("--from session-- result is: " + result); */
+		out.println("--from session-- result is: " + result); 
 		
 //		USING COOKIES
 		//extract cookie-comes as a request to this square server so we use req 
-		int result =0;
-		Cookie cookies[] = req.getCookies();  
-		
-		for(Cookie c : cookies) {
-			if(c.getName().equals("result"))
-				result=Integer.parseInt(c.getValue());
-		}
-		
-		result = result * result;
-		PrintWriter out = res.getWriter();
-		out.println("--from cookie-- result is: " + result); 
+		/*
+		 * int result =0; Cookie cookies[] = req.getCookies();
+		 * 
+		 * for(Cookie c : cookies) { if(c.getName().equals("result"))
+		 * result=Integer.parseInt(c.getValue()); }
+		 * 
+		 * result = result * result; PrintWriter out = res.getWriter();
+		 * out.println("--from cookie-- result is: " + result);
+		 */
 		
 					
 					
